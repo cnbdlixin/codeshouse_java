@@ -13,12 +13,12 @@ public class Config
 	/**
 	 * 开发者注册后系统自动生成的账号，可在官网登录后查看
 	 */
-	public static final String ACCOUNT_SID = "5a08f82d57a942a2927658f90fd16765";
+	public static final String ACCOUNT_SID = "秒嘀申请";
 
 	/**
 	 * 开发者注册后系统自动生成的TOKEN，可在官网登录后查看
 	 */
-	public static final String AUTH_TOKEN = "a7f36d280b804c4fbb432fb977d5dad3";
+	public static final String AUTH_TOKEN = "秒嘀申请";
 
 	/**
 	 * 响应数据类型, JSON或XML

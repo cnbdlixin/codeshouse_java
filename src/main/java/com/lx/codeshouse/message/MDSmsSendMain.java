@@ -5,13 +5,15 @@ import com.lx.codeshouse.util.MessageHttpUtil;
 
 /**
  * Created by lee_xin on 17/7/4.
+ *发送秒嘀短信
+ * 去秒嘀申请key
  */
 public class MDSmsSendMain {
     private static String operation = "/industrySMS/sendSMS";
 
     private static String accountSid = Config.ACCOUNT_SID;
     private static String to = "18510512189";
-    private static String smsContent = "【顺丰店配系统】尊敬的用户：您的注册验证码为12345，有效期为20分钟，请勿将验证码告知他人。";
+    private static String smsContent = "【【跳起来】尊敬的用户：您的注册验证码为12345，有效期为20分钟，请勿将验证码告知他人。";
 
     public static void main(String[] args) {
         String url = Config.BASE_URL + operation;

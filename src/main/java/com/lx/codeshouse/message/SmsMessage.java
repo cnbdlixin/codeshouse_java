@@ -2,6 +2,8 @@ package com.lx.codeshouse.message;
 
 /**
  * Created by lee_xin on 17/7/4.
+ * 使用网易云发送短信
+ * 使用自己帐号的网易云申请应用的key 进行下边的个性
  */
 
 import org.apache.http.HttpResponse;
@@ -22,9 +24,9 @@ public class SmsMessage {
             SERVER_URL="https://api.netease.im/sms/sendtemplate.action";
     //网易云信分配的账号，请替换你在管理后台应用下申请的Appkey
     private static final String
-             APP_KEY="77acb647751761e6a4f7a341474f64e0";
+             APP_KEY="网易云申请";
     //网易云信分配的密钥，请替换你在管理后台应用下申请的appSecret
-    private static final String APP_SECRET="7c03e4fcf555";
+    private static final String APP_SECRET="网易云申请";
     //随机数
     private static final String NONCE="123456";
     //短信模板ID
