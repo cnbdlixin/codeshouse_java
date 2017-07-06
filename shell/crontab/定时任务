@@ -1,0 +1,2 @@
+#¶¨Ê±Ö´ÐÐ bakup.sh
+0 0 * * * (sh /opt/shell/bakup.sh > /dev/null 2>&1)

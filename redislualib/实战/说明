@@ -1,0 +1,42 @@
+    实战一，连接池带认证方式访问  redis
+1.redis_iresty.lua (封闭命令)
+2 rediscli.lua (封装连接池连接带认证)
+以上两文件放到 /openresty/lualib/resty
+3调用方式文件  conn.lua
+4.nginx 配置
+  location ~/getconnect {
+                   default_type 'text/html';
+                   set $key $1;
+                   lua_code_cache off;
+                   content_by_lua_file conf/conn.lua;
+
+                   }
+                   实战二  解决 redis,返回数组信息
+1.调用 文件 array.lua
+2nginx 配置
+location ~/getconnect {
+                   default_type 'text/html';
+                   set $key $1;
+                   lua_code_cache off;
+                   content_by_lua_file conf/array.lua;
+
+                   }
+                   实战三  使用配置文件 连接redis
+1.修改rediscli.lua 为rediscli-order.lua，说明：在后边进行默认配置
+2.lua 业务脚本加载rediscli-order.lua,使用空的redis变量声明
+                   实战四  http get方式查询缓存  post 方式，更新缓存
+1.当使用get方法时为查询缓存方法,当使用post方法时为更新缓存方法,为了获取post请求参数需要在location中写入: lua_need_request_body on;
+2.发起post请求  curl -d "key=lixin&value=30" http://127.0.0.1:8088/getconnectgp
+
+                   实战五 lua 脚本再次发起post请求
+1.接收到客户端 请求后，将请求参数做调整再发起目的服务器的post请求
+2代码 post 请求
+local handle =io.popen("curl -q -k -s -m  1  http://127.0.0.1:8088/getconnectgp  -d 'value=102&key=lixin'")
+        local result = handle:read("*a")
+        handle:close()
+        ngx.say(result)
+3 代码 get 请求
+local handle =io.popen("curl -q -k -s -m  1  http://127.0.0.1:8088/getconnectgp")
+        local result = handle:read("*a")
+        handle:close()
+        ngx.say(result)

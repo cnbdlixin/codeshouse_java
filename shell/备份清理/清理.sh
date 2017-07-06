@@ -1,0 +1,1 @@
+find /opt/logs/nginx/ -type f -ctime +30 -exec rm -f {} \;
