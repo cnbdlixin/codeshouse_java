@@ -1,6 +1,6 @@
 package com.lx.codeshouse.util.network;
 
-import com.common.utils.file.FileUtil;
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 
 import java.io.BufferedInputStream;
@@ -87,7 +87,7 @@ public class HtmlPageUtil {
 			URL HttpUrl = new URL(url);
 			con = HttpUrl.openConnection();
 			con.setUseCaches(false);
-			reList = FileUtil.readInputStreamLine(new BufferedInputStream(con.getInputStream()));
+//			reList = FileUtil.readInputStreamLine(new BufferedInputStream(con.getInputStream()));
 		} catch (Exception e) {
 			log.error("fail to get "+url+" !");
 			e.printStackTrace();

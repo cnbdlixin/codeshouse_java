@@ -1,6 +1,7 @@
 package com.lx.codeshouse.util.network;
 
-import com.common.utils.file.FileUtil;
+import com.lx.codeshouse.util.file.FileUtil;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.net.PrintCommandListener;
 import org.apache.commons.net.ftp.*;
 import org.apache.log4j.Logger;
