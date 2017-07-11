@@ -1,6 +1,6 @@
 package com.lx.codeshouse.util.date;
 
-import com.common.Constants.Constants;
+
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -378,7 +378,7 @@ public class TimeUtil {
     	  c.roll(Calendar.DATE,-1);
     	  
     	  return c.getTime();????*/
-    	 return new Date(date.getTime()-Constants.DAY_1);
+    	 return new Date(date.getTime()-24*60*60*1000);
      }
       
 }

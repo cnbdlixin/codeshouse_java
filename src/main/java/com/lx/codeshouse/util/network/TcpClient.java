@@ -1,6 +1,7 @@
 package com.lx.codeshouse.util.network;
 
-import com.common.utils.file.FileUtil;
+import com.lx.codeshouse.util.file.FileUtil;
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 
 import java.io.*;
@@ -93,7 +94,7 @@ public class TcpClient {
 		return result.toString();
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 //		String data = new TcpClient().readFromServer("10.1.99.87 ", 20);
 //		System.out.println(data);
 		
@@ -119,10 +120,12 @@ public class TcpClient {
 			}
 
 			String date = (ymd + hms).trim(); // ��ǰʱ�� ��ʽΪ��yyyyMMddHHmmss
-			
-			FileUtil.writeStringToFile(new File("test11/" + date + ".txt"), data,"GB2312");
-			
-			try {
+		try {
+			FileUtils.writeStringToFile(new File("test11/" + date + ".txt"), data,"UTF-8");
+		} catch (IOException e) {
+			log.error("文件创建写入失败");
+		}
+		try {
 				Thread.sleep(4000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
