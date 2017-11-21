@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by lee_xin on 17/11/10.
+ *  上传图片给解析服务器
  */
 public class Photo2word {
 

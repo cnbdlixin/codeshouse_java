@@ -13,6 +13,7 @@ import java.util.HashMap;
 
 /**
  * Created by lee_xin on 17/11/10.
+ * 读取图片文件 以流的方式 传给解析服务器
  */
 public class Photo2wordbyfile {
 
@@ -34,7 +35,7 @@ public class Photo2wordbyfile {
 //        client.setSocketProxy("proxy_host", proxy_port);  // 设置socket代理
 
         // 调用接口
-        String path = "l1.1.png";
+        String path = "l16.1.png";
         byte[] file = readImageFile(path,client);
 
 
@@ -46,7 +47,7 @@ public class Photo2wordbyfile {
         try {
             input = new FileImageInputStream(new File(path));
             ByteArrayOutputStream output = new ByteArrayOutputStream();
-            byte[] buf = new byte[1024*1024];
+            byte[] buf = new byte[1024*8*100];
             int numBytesRead = 0;
             String result ="";
             while ((numBytesRead = input.read(buf)) != -1) {
